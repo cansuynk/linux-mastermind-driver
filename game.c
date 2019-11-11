@@ -16,7 +16,8 @@
 
 
 void toString(int number, char* numberArray){
-    for (int i = 3; i > -1 ; i--) {
+	int i = 3;
+    for (; i > -1 ; i--) {
     	numberArray[i] = number % 10 + '0';
     	number = number / 10;
     }
@@ -28,7 +29,7 @@ int main(void) {
 	int parameter = 4823;
 	char* command = (char*)malloc(sizeof(char) * 4);
 	int remaining;
-	int fd = open("/dev/masterMind" , O_RDWR);
+	int fd = open("/dev/mastermind" , O_RDWR);
 	printf("Enter secret: ");
 	scanf("%d", &parameter);
 	ioctl(fd, MMIND_NEWGAME, parameter);
@@ -40,7 +41,7 @@ int main(void) {
 START_AGAIN:
 	while(ioctl(fd, MMIND_REMAINING))
 	{
-		fd = open("/dev/masterMind" , O_RDWR);
+		fd = open("/dev/mastermind" , O_RDWR);
 		printf("Enter command: ");
 		scanf("%s %d", command, &parameter);
 
@@ -63,7 +64,8 @@ START_AGAIN:
 			int read_count = read(fd, buffer, 4096);
 			printf("******************* Remaining Guess: %d ************************\n", --remaining);
 			//Print current results
-			for(int i = 0; i < read_count; i++){
+			int i = 0;
+			for(; i < read_count; i++){
 				putchar(buffer[i]);
 			}
 			if(buffer[read_count - 11] == '4'){
