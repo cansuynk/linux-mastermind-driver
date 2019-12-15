@@ -31,9 +31,9 @@ gcc -o game game.c
 
 <h4>######### When program is executed the process given below will be performed ##########</h4>
 
-Enter secret: 				                    <h4>type 4 digit secret number</h4>				           
-Staring new game secret= <secret number>	<h4>Your secret number will be showing here</h4>
-Commands:									                <h4>Possible commands that user can select</h4>
-(New Game) new <secret>						        <h4>To start new game, type "new" and your secret number</h4>
-(Exit Game) end 0							            <h4>To end game, type "end" and 0</h4>
-(Guess) gus <guess>							          <h4>To do guess, type "gus" and your guess number</h4>
+<h4>Enter secret: 				                     --->type 4 digit secret number</h4>				           
+<h4>Staring new game secret= <secret number>	 --->Your secret number will be showing here</h4>
+<h4>Commands:									                 --->Possible commands that user can select</h4>
+<h4>(New Game) new <secret>						         --->To start new game, type "new" and your secret number</h4>
+<h4>(Exit Game) end 0							             --->To end game, type "end" and 0</h4>
+<h4>(Guess) gus <guess>							           --->To do guess, type "gus" and your guess number</h4>
