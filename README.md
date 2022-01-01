@@ -1,39 +1,61 @@
-<h4>###########To create the driver##############</h4>
-
+### To create the driver
+```
 make	
-<h4>remove module if exist </h4>
-sudo rmmod mastermind      
+```
 
-<h4>major number, max guess number and secret number can be given as module parameters</h4>
+### Remove module if exist
+```
+sudo rmmod mastermind
+```
+
+### Major number, max guess number and secret number can be given as module parameters
+```
 sudo insmod mastermind.ko major_number=142 mmind_max_guesses=10 mmind_number=4283	
+```
 
-<h4>to see mastermind in the list of loaded modules</h4>
-lsmod 							
+### To see mastermind in the list of loaded modules
+```
+lsmod
+```
 
-<h4>remove device node if exist</h4>
-sudo rm /dev/mastermind							
+### Remove device node if exist
+```
+sudo rm /dev/mastermind
+```
 
-<h4>create device node</h4>
+### Create device node
+```
 sudo mknod -m 666 /dev/mastermind c 142 0
+```
 
-<h4>write to device (example)</h4>
+### Write to device (example)
+```
 echo "1234" > /dev/mastermind
+```
 
-<h4>read from device</h4>
-cat /dev/mastermind	
+### Read from device
+```
+cat /dev/mastermind
+```
 
-<h4>compile test code</h4>
+### Compile test code
+```
 gcc -o game game.c
+```
 
-<h4>execute test code</h4>
-./game		
+### Execute test code
+```
+./game
+```
 
 
-<h4>######### When program is executed the process given below will be performed ##########</h4>
+## When program is executed the process given below will be performed
 
-Enter secret: 				                      <h4>--->type 4 digit secret number</h4>				           
-Staring new game secret= < secret number >	<h4>--->Your secret number will be showing here</h4>
-Commands:									                  <h4>--->Possible commands that user can select</h4>
-(New Game) new < secret >						        <h4>--->To start new game, type "new" and your secret number</h4>
-(Exit Game) end 0							              <h4>--->To end game, type "end" and 0</h4>
-(Guess) gus < guess >							          <h4>--->To do guess, type "gus" and your guess number</h4>
+<pre>
+Enter secret:                               <b>--->type 4 digit secret number</b>				           
+Staring new game secret= < secret number >  <b>--->Your secret number will be showing here</b>
+Commands:                                   <b>--->Possible commands that user can select</b>
+(New Game) new < secret >                   <b>--->To start new game, type "new" and your secret number</b> 
+(Exit Game) end 0                           <b>--->To end game, type "end" and 0</b>
+(Guess) gus < guess >                       <b>--->To do guess, type "gus" and your guess number</b>
+</pre>
